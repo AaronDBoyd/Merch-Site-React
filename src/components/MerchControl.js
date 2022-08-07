@@ -44,11 +44,33 @@ export default class MerchControl extends Component {
     this.setState({ selectedMerch: selectedMerch})
   }
 
+  handleEditClick = () => {
+    this.setState({ editing: true});
+  };
+
+  handleDeletingMerch = (id) => {
+    const newMainMerchList = this.state.mainMerchList.filter(
+      (merch) => merch.id !== id
+    );
+    this.setState({
+      mainMerchList: newMainMerchList,
+      selectedMerch: null,
+    })
+  }
+
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
 
-    if (this.state.selectedMerch != null) {
+
+    if (this.state.editing) {
+      currentlyVisibleState = 
+      <EditMerchForm
+        merch={this.state.selectedMerch}
+        onEditMerch={this.handleEditingMerchInList}
+      />
+      buttonText = "View Merch List";
+    } else if (this.state.selectedMerch != null) {
       currentlyVisibleState = (
         <MerchDetail
           merch={this.state.selectedMerch}

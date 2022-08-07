@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 function MerchDetail(props) {
-  const { merch } = props;
+  const { merch, onClickingDelete } = props;
 
   return (
     <React.Fragment>
@@ -10,6 +10,9 @@ function MerchDetail(props) {
       <h3> {merch.name} </h3>
       <h4> {merch.description} </h4>
       <h4> {merch.quantity} </h4>
+      <button onClick={ props.onClickingEdit }>Update Merch</button>
+      <button onClick={() => onClickingDelete(merch.id)}> Delete Merch</button>
+      <hr />
     </React.Fragment>
   )
 }
