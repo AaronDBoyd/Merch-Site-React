@@ -48,6 +48,17 @@ export default class MerchControl extends Component {
     this.setState({ editing: true});
   };
 
+  handleEditingMerchInList = (merchToEdit) => {
+    const editedMainMerchList = this.state.mainMerchList.filter(
+      (merch) => merch.id !== this.state.selectedMerch.id) 
+      .concat(merchToEdit);
+      this.setState({
+        mainMerchList: editedMainMerchList,
+        editing: false,
+        selectedMerch: null,
+      })
+  }
+
   handleDeletingMerch = (id) => {
     const newMainMerchList = this.state.mainMerchList.filter(
       (merch) => merch.id !== id
