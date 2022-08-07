@@ -18,6 +18,7 @@ Merch.propTypes = {
   name: PropTypes.string,
   description: PropTypes.string,
   quantity: PropTypes.number,
+  whenMerchClicked: PropTypes.func
 };
 
 export default Merch;
