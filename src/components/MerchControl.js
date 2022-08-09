@@ -13,7 +13,18 @@ export default class MerchControl extends Component {
       selectedMerch: null,
       mainMerchList: [],
       editing: false,
-      cartList: [],
+      mainCartList: [
+        {
+              name: "t-shirt",
+              description: "A shirt with a logo of Zara.",
+              quantity: 3,
+            },
+            {
+              name: "sticker",
+              description: "A sticker with a graphic of Zara floating through space.",
+              quantity: 6,
+            },
+      ],
     };
   }
 
@@ -79,10 +90,13 @@ export default class MerchControl extends Component {
       (merch) => merch.id !== id) 
       .concat(selectedItem);
 
+    const newMainCartList = this.state.mainCartList.concat(selectedItem);  
+
     this.setState({
       mainMerchList: editedMainMerchList,
       editing: false,
       selectedMerch: null,
+      mainCartList: newMainCartList,
     })
   }
 
@@ -145,7 +159,9 @@ export default class MerchControl extends Component {
         <br></br>
         <br></br>
 
-        <Cart />
+        <Cart 
+          cartList={this.state.mainCartList}
+        />
       </React.Fragment>
     );
   }
