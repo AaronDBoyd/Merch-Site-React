@@ -27,6 +27,7 @@ function MerchList(props) {
       <hr />
       {props.merchList.map((merch) => (
         <Merch
+          whenBuyClicked={props.onClickingBuy}
           whenMerchClicked={props.onMerchSelection}
           name={merch.name}
           description={merch.description}

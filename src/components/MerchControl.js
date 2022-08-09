@@ -69,10 +69,24 @@ export default class MerchControl extends Component {
     })
   }
 
+  handleBuyingMerch = (id) => {
+    const selectedItem = this.state.mainMerchList.filter((merch) => merch.id === id)[0]
+    selectedItem.quantity -= 1;
+
+    const editedMainMerchList = this.state.mainMerchList.filter(
+      (merch) => merch.id !== id) 
+      .concat(selectedItem);
+
+    this.setState({
+      mainMerchList: editedMainMerchList,
+      editing: false,
+      selectedMerch: null,
+    })
+  }
+
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
-
 
     if (this.state.editing) {
       currentlyVisibleState = 
@@ -100,6 +114,7 @@ export default class MerchControl extends Component {
         <MerchList
           merchList={this.state.mainMerchList}
           onMerchSelection={this.handleChangingSelectedMerch}
+          onClickingBuy={this.handleBuyingMerch}
         />
       );
       buttonText = "Add New Merch";

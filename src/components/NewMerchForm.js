@@ -10,7 +10,7 @@ function NewMerchForm(props) {
     props.onNewMerchCreation({
       name: event.target.name.value,
       description: event.target.description.value,
-      quantity: event.target.quantity.value,
+      quantity: parseInt(event.target.quantity.value),
       id: v4()
     });
   }

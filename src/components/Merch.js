@@ -9,6 +9,8 @@ function Merch(props) {
         <h4>{props.description}</h4>
         <h4>Items Left: {props.quantity}</h4>
       </div>
+      <button onClick={() => props.whenBuyClicked(props.id)}>Buy Item</button>
+      {/* <button onClick={() => props.whenBuyClicked()}>Buy Item</button> */}
       <hr />
     </React.Fragment>
   );
