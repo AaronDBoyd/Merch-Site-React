@@ -3,6 +3,7 @@ import MerchList from "./MerchList";
 import MerchDetail from "./MerchDetail";
 import NewMerchForm from "./NewMerchForm";
 import EditMerchForm from "./EditMerchForm";
+import Cart from "./Cart";
 
 export default class MerchControl extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ export default class MerchControl extends Component {
       selectedMerch: null,
       mainMerchList: [],
       editing: false,
+      cartList: [],
     };
   }
 
@@ -139,6 +141,11 @@ export default class MerchControl extends Component {
       <React.Fragment>
         {currentlyVisibleState}
         <button onClick={this.handleClick}>{buttonText}</button>
+        <br></br>
+        <br></br>
+        <br></br>
+
+        <Cart />
       </React.Fragment>
     );
   }
