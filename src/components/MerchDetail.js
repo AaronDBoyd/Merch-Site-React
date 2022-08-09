@@ -10,6 +10,9 @@ function MerchDetail(props) {
       <h3> {merch.name} </h3>
       <h4> {merch.description} </h4>
       <h4> {merch.quantity} </h4>
+
+      <button onClick={() => props.onClickingRestock(merch.id) }>Restock</button>
+
       <button onClick={ props.onClickingEdit }>Update Merch</button>
       <button onClick={() => onClickingDelete(merch.id)}> Delete Merch</button>
       <hr />

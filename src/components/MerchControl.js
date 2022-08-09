@@ -52,11 +52,11 @@ export default class MerchControl extends Component {
     const editedMainMerchList = this.state.mainMerchList.filter(
       (merch) => merch.id !== this.state.selectedMerch.id) 
       .concat(merchToEdit);
-      this.setState({
-        mainMerchList: editedMainMerchList,
-        editing: false,
-        selectedMerch: null,
-      })
+    this.setState({
+      mainMerchList: editedMainMerchList,
+      editing: false,
+      selectedMerch: null,
+    })
   }
 
   handleDeletingMerch = (id) => {
@@ -73,6 +73,20 @@ export default class MerchControl extends Component {
     const selectedItem = this.state.mainMerchList.filter((merch) => merch.id === id)[0]
     selectedItem.quantity -= 1;
 
+    const editedMainMerchList = this.state.mainMerchList.filter(
+      (merch) => merch.id !== id) 
+      .concat(selectedItem);
+
+    this.setState({
+      mainMerchList: editedMainMerchList,
+      editing: false,
+      selectedMerch: null,
+    })
+  }
+
+  handleRestockClick = (id) => {
+    const selectedItem = this.state.mainMerchList.filter((merch) => merch.id === id)[0]
+    selectedItem.quantity += 10;
     const editedMainMerchList = this.state.mainMerchList.filter(
       (merch) => merch.id !== id) 
       .concat(selectedItem);
@@ -101,6 +115,7 @@ export default class MerchControl extends Component {
           merch={this.state.selectedMerch}
           onClickingDelete={this.handleDeletingMerch}
           onClickingEdit={this.handleEditClick}
+          onClickingRestock={this.handleRestockClick}
         />
       );
       buttonText = "View Contact List";
