@@ -13,6 +13,7 @@ function Cart(props) {
       {cartList.map((item) => (
         <CartItem 
           name={item.name}
+          price={item.price}
         />
       ))}
     </React.Fragment>

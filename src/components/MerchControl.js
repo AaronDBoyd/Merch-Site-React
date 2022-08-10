@@ -104,7 +104,7 @@ export default class MerchControl extends Component {
       .concat(selectedItem);
 
     const newMainCartList = this.state.mainCartList.concat(selectedItem);  
-
+// console.log(this.state.mainMerchList)
     this.setState({
       mainMerchList: editedMainMerchList,
       editing: false,

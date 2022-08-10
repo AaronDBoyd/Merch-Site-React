@@ -5,7 +5,7 @@ function CartItem(props) {
   return (
     <React.Fragment>
       
-      <h3>{props.name}</h3>
+      <h3>{props.name} - ${props.price}</h3>
     </React.Fragment>
   );
 }

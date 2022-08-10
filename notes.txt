@@ -21,6 +21,7 @@ A user should be able to view and remove items from the cart.
   - Add price to merch.
   - Show cart total price.
   - Group same items and display count of each item.
+  ?? How to fix issue where array is being reorganized??
 
 
 Create a widget that shows the number of items in the cart. This widget should be updated when items are added to the cart.
