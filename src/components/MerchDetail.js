@@ -8,6 +8,7 @@ function MerchDetail(props) {
     <React.Fragment>
       <h1> Item Detail </h1>
       <h3> {merch.name} </h3>
+      <h3> ${merch.price} </h3>
       <h4> {merch.description} </h4>
       <h4> {merch.quantity} </h4>
 

@@ -7,11 +7,13 @@ import Merch from "./Merch";
 //     name: "t-shirt",
 //     description: "A shirt with a logo of Zara.",
 //     quantity: 3,
+//     price: 20
 //   },
 //   {
 //     name: "sticker",
 //     description: "A sticker with a graphic of Zara floating through space.",
 //     quantity: 6,
+//     price: 5
 //   },
 //   {
 //     name: "kazoo",
@@ -30,6 +32,7 @@ function MerchList(props) {
           whenBuyClicked={props.onClickingBuy}
           whenMerchClicked={props.onMerchSelection}
           name={merch.name}
+          price={merch.price}
           description={merch.description}
           quantity={merch.quantity}
           id={merch.id}

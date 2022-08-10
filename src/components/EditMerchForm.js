@@ -10,6 +10,7 @@ function EditMerchForm(props) {
     event.preventDefault();
     props.onEditMerch({
       name: event.target.name.value,
+      price: parseInt(event.target.price.value),
       description: event.target.description.value,
       quantity: parseInt(event.target.quantity.value),
       id: merch.id

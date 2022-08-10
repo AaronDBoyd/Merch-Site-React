@@ -16,6 +16,7 @@ function Merch(props) {
     <React.Fragment>
       <div onClick = {() => props.whenMerchClicked(props.id)}> 
         <h3>{props.name}</h3>
+        <h3>${props.price}</h3>
         <h4>{props.description}</h4>
         <h4>Items Left: {props.quantity}</h4>
       </div>

@@ -9,6 +9,7 @@ function NewMerchForm(props) {
     event.preventDefault();
     props.onNewMerchCreation({
       name: event.target.name.value,
+      price: parseInt(event.target.price.value),
       description: event.target.description.value,
       quantity: parseInt(event.target.quantity.value),
       id: v4()

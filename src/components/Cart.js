@@ -9,7 +9,7 @@ function Cart(props) {
     <React.Fragment>
       <h1>- Cart -</h1>
       <h2> Total Items: {cartList.length}</h2>
-      <h2> Total Items: {typeof cartList}</h2>
+      {/* <h2> Total Price: {typeof cartList}</h2>  */}
       {cartList.map((item) => (
         <CartItem 
           name={item.name}

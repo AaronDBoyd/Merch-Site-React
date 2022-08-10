@@ -18,6 +18,9 @@ A user should be able to view and remove items from the cart.
     - state slice to hold array for items added to cart.
     - state slice to toggle if cart is showing
   - Add to handleBuyingMerch function to edit cart state.  
+  - Add price to merch.
+  - Show cart total price.
+  - Group same items and display count of each item.
 
 
 Create a widget that shows the number of items in the cart. This widget should be updated when items are added to the cart.
