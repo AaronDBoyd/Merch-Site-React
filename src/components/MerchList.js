@@ -45,7 +45,8 @@ function MerchList(props) {
 
 MerchList.propTypes = {
   merchList: PropTypes.array,
-  onMerchSelection: PropTypes.func
+  onMerchSelection: PropTypes.func,
+  onClickingBuy: PropTypes.func,
 };
 
 export default MerchList;
