@@ -22,7 +22,10 @@ function MerchDetail(props) {
 }
 
 MerchDetail.propTypes = {
-  merch: PropTypes.object
+  merch: PropTypes.object,
+  onClickingDelete: PropTypes.func,
+  onClickingEdit: PropTypes.func,
+  onClickingRestock: PropTypes.func,
 }
 
 export default MerchDetail
